@@ -7,9 +7,9 @@
   </head>
   <body>
     <div id="app">
-      <p v-if="rano">Cześć jest rano!</p>
-      <p v-if="popoludnie">Cześć jest popoludnie!</p>
-      <p v-if="wieczor">Cześć jest wieczor!</p>
+      <p v-if="godzina < 12 ">Cześć jest rano!</p>
+      <p v-if="godzina >= 12 && godzina < 18">Cześć jest popoludnie!</p>
+      <p v-if="godzina >= 18">Cześć jest wieczór!</p>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -18,9 +18,7 @@
       new Vue({
         el: "#app",
         data: {
-          rano: godzina < 12,
-          popoludnie: godzina >= 12 && godzina < 18,
-          wieczor: godzina >= 18,
+          godzina: new Date().getHours(),
         },
       });
     </script>

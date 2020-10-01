@@ -10,13 +10,16 @@
       <p>{{sekundy}} sekund znajdujesz sie na stronie !</p>
     </div>
 
+    Vue.set(vs.tab, 2, "Nowa wartość")
+
     <script src="http://unpkg.com/vue"></script>
     <script>
       let godzina = new Date().getHours();
-      new Vue({
+      let vs = new Vue({
         el: "#app",
         data: {
           sekundy: 0,
+          tab: [1, 2, 3, 4],
         },
         created() {
           setInterval(() => {

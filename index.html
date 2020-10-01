@@ -7,11 +7,9 @@
   </head>
   <body>
     <div id="app">
-      <p v-if="true">To się wyświetli</p>
-      <p v-if="false">To się nie wyświetli</p>
-
-      <p v-show="true">To się wyświetli</p>
-      <p v-show="false">To się nie wyświetli</p>
+      <div v-if="stan === 1">Stan 1</div>
+      <div v-else-if="stan === 2">Stan 2</div>
+      <div v-else=>Inny stan</div>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -19,7 +17,9 @@
       let godzina = new Date().getHours();
       new Vue({
         el: "#app",
-        data: {},
+        data: {
+          stan: 1,
+        },
       });
     </script>
   </body>

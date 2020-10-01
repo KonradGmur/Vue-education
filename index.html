@@ -7,8 +7,11 @@
   </head>
   <body>
     <div id="app">
-      <p>Pierwszye auto to: {{samochody[0]}}</p>
-      <p>Wszystkie samochody: {{samochody}}</p>
+      <p v-if="true">To się wyświetli</p>
+      <p v-if="false">To się nie wyświetli</p>
+
+      <p v-show="true">To się wyświetli</p>
+      <p v-show="false">To się nie wyświetli</p>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -16,9 +19,7 @@
       let godzina = new Date().getHours();
       new Vue({
         el: "#app",
-        data: {
-          samochody: ["BMW", "Audi", "Mercedes", "Fiat"],
-        },
+        data: {},
       });
     </script>
   </body>

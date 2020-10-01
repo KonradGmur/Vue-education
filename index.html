@@ -7,10 +7,9 @@
   </head>
   <body>
     <div id="app">
-      <p>{{sekundy}} sekund znajdujesz sie na stronie !</p>
+      <input type="text" v-model="text" />
+      <p>Tekst - {{text}}</p>
     </div>
-
-    Vue.set(vs.tab, 2, "Nowa wartość")
 
     <script src="http://unpkg.com/vue"></script>
     <script>
@@ -18,13 +17,7 @@
       let vs = new Vue({
         el: "#app",
         data: {
-          sekundy: 0,
-          tab: [1, 2, 3, 4],
-        },
-        created() {
-          setInterval(() => {
-            this.sekundy++;
-          }, 1000);
+          text: "",
         },
       });
     </script>

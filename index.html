@@ -7,9 +7,11 @@
   </head>
   <body>
     <div id="app">
-      <div v-if="stan === 1">Stan 1</div>
-      <div v-else-if="stan === 2">Stan 2</div>
-      <div v-else=>Inny stan</div>
+      <ul>
+        <li v-for="(klub, miasto) in kluby">
+          W mieście {{miasto}} jest klub {{klub}}
+        </li>
+      </ul>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -18,7 +20,11 @@
       new Vue({
         el: "#app",
         data: {
-          stan: 1,
+          kluby: {
+            londyn: "Arsenal",
+            barcelona: "FC Barcelona",
+            turyn: "Juventus",
+          },
         },
       });
     </script>

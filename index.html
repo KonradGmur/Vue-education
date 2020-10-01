@@ -7,8 +7,8 @@
   </head>
   <body>
     <div id="app">
-      <p v-if="godzina < 12">Cześć {{imie}}, co za piękny poranek</p>
-      <p v-else>Cześć {{imie}}, piękne popołudnie, prawda?</p>
+      <p>Pierwszye auto to: {{samochody[0]}}</p>
+      <p>Wszystkie samochody: {{samochody}}</p>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -17,8 +17,7 @@
       new Vue({
         el: "#app",
         data: {
-          imie: "Konrad",
-          godzina: new Date().getHours(),
+          samochody: ["BMW", "Audi", "Mercedes", "Fiat"],
         },
       });
     </script>

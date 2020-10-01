@@ -7,8 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <input :type="typ" />
-      <!-- <input v-bind:type="typ" /> -->
+      <p>{{sekundy}} sekund znajdujesz sie na stronie !</p>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -17,7 +16,12 @@
       new Vue({
         el: "#app",
         data: {
-          typ: "password",
+          sekundy: 0,
+        },
+        created() {
+          setInterval(() => {
+            this.sekundy++;
+          }, 1000);
         },
       });
     </script>

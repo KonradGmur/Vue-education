@@ -7,9 +7,8 @@
   </head>
   <body>
     <div id="app">
-      <ul>
-        <li v-for="n in 30">{{n}}</li>
-      </ul>
+      <input :type="typ" />
+      <!-- <input v-bind:type="typ" /> -->
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -17,7 +16,9 @@
       let godzina = new Date().getHours();
       new Vue({
         el: "#app",
-        data: {},
+        data: {
+          typ: "password",
+        },
       });
     </script>
   </body>

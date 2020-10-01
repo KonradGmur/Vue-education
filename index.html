@@ -8,9 +8,7 @@
   <body>
     <div id="app">
       <ul>
-        <li v-for="(klub, miasto) in kluby">
-          W mieście {{miasto}} jest klub {{klub}}
-        </li>
+        <li v-for="n in 30">{{n}}</li>
       </ul>
     </div>
 
@@ -19,13 +17,7 @@
       let godzina = new Date().getHours();
       new Vue({
         el: "#app",
-        data: {
-          kluby: {
-            londyn: "Arsenal",
-            barcelona: "FC Barcelona",
-            turyn: "Juventus",
-          },
-        },
+        data: {},
       });
     </script>
   </body>

@@ -6,9 +6,7 @@
     <title>Vue - education</title>
   </head>
   <body>
-    <div id="app">
-      <p>Suma liczb: {{Suma}}</p>
-    </div>
+    <div id="app"></div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
@@ -16,12 +14,11 @@
       let vs = new Vue({
         el: "#app",
         data: {
-          numbers: [1, 2, 3],
+          number: 5,
         },
-        methods: {},
-        computed: {
-          Suma() {
-            return this.numbers.reduce((sum, val) => sum + val);
+        watchers: {
+          number() {
+            //kod który ma być wykonywany w przypadku zmiany wartości number
           },
         },
       });

@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <div v-html="code"></div>
+      <p>{{seyHello()}}</p>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -16,7 +16,12 @@
       let vs = new Vue({
         el: "#app",
         data: {
-          code: "<h1>Nagłówek pierwszego stopnia</h1>",
+          name: "Konrad",
+        },
+        methods: {
+          seyHello() {
+            return "Hello, " + this.name;
+          },
         },
       });
     </script>

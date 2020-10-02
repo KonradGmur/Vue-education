@@ -7,22 +7,17 @@
   </head>
   <body>
     <div id="app">
-      <p>Koszt produktu: {{produktJeden | formatWaluty('$')}}</p>
+      <button ref="myButton">Button</button>
     </div>
+
+    this.$refs.myButton
 
     <script src="http://unpkg.com/vue"></script>
     <script>
       let godzina = new Date().getHours();
       let vs = new Vue({
         el: "#app",
-        data: {
-          produktJeden: 1234,
-        },
-        filters: {
-          formatWaluty(value, symbol) {
-            return symbol + (value / 100).toFixed(2);
-          },
-        },
+        data: {},
       });
     </script>
   </body>

@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <p>{{seyHello()}}</p>
+      <p>Suma liczb: {{Suma}}</p>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -16,11 +16,12 @@
       let vs = new Vue({
         el: "#app",
         data: {
-          name: "Konrad",
+          numbers: [1, 2, 3],
         },
-        methods: {
-          seyHello() {
-            return "Hello, " + this.name;
+        methods: {},
+        computed: {
+          Suma() {
+            return this.numbers.reduce((sum, val) => sum + val);
           },
         },
       });

@@ -7,8 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <input type="text" v-model="text" />
-      <p>Tekst - {{text}}</p>
+      <div v-html="code"></div>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -17,7 +16,7 @@
       let vs = new Vue({
         el: "#app",
         data: {
-          text: "",
+          code: "<h1>Nagłówek pierwszego stopnia</h1>",
         },
       });
     </script>

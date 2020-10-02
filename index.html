@@ -7,9 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <button v-on:click="add">Click me!</button>
-      <!-- <button @click="add">Click me!</button> -->
-      <p>The button has been pressed {{howMuch}} times</p>
+      <p v-changed="500">This text changed color</p>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -17,12 +15,16 @@
       let godzina = new Date().getHours();
       let vs = new Vue({
         el: "#app",
-        data: {
-          howMuch: 0,
-        },
-        methods: {
-          add() {
-            this.howMuch++;
+        data: {},
+        directives: {
+          changed: {
+            bind(el, time) {
+              let redColor = true;
+              setInterval(() => {
+                redColor = !redColor;
+                el.style.color = redColor ? "red" : "blue";
+              }, time.value || 1000);
+            },
           },
         },
       });

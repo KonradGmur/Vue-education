@@ -6,7 +6,9 @@
     <title>Vue - education</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <p>Koszt produktu: {{produktJeden | formatWaluty('$')}}</p>
+    </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
@@ -14,11 +16,11 @@
       let vs = new Vue({
         el: "#app",
         data: {
-          number: 5,
+          produktJeden: 1234,
         },
-        watchers: {
-          number() {
-            //kod który ma być wykonywany w przypadku zmiany wartości number
+        filters: {
+          formatWaluty(value, symbol) {
+            return symbol + (value / 100).toFixed(2);
           },
         },
       });

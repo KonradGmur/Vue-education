@@ -6,12 +6,20 @@
     <title>Vue - education</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <font-color color="orange" font="25"></font-color>
+    </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
       Vue.component("font-color", {
-        template: '<p class ="colorful-font" :style="style"></p>',
+        template: '<p class ="colorful-font" :style="style">Our paragraph</p>',
+        props: ["color", "font"],
+        computed: {
+          style() {
+            return { color: this.color, fontSize: this.font + "px" };
+          },
+        },
       });
       new Vue({
         el: "#app",

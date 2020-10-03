@@ -7,25 +7,18 @@
   </head>
   <body>
     <div id="app">
-      <p v-changed="500">This text changed color</p>
+      <my-Paragraph></my-Paragraph>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
-      let godzina = new Date().getHours();
-      let vs = new Vue({
+      const myParagraph = {
+        template: "<p>Mój własny paragraf</p>",
+      };
+      new Vue({
         el: "#app",
-        data: {},
-        directives: {
-          changed: {
-            bind(el, time) {
-              let redColor = true;
-              setInterval(() => {
-                redColor = !redColor;
-                el.style.color = redColor ? "red" : "blue";
-              }, time.value || 1000);
-            },
-          },
+        components: {
+          myParagraph,
         },
       });
     </script>

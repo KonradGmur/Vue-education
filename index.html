@@ -6,24 +6,12 @@
     <title>Vue - education</title>
   </head>
   <body>
-    <div id="app">
-      <parzyste-liczby></parzyste-liczby>
-    </div>
+    <div id="app"></div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
-      Vue.component("parzyste-liczby", {
-        template: "<p>{{evenNumbers}} - even numbers</p>",
-        data() {
-          return {
-            numbers: [1, 2, 3, 4, 5, 6, 8, 10, 11, 12],
-          };
-        },
-        computed: {
-          evenNumbers() {
-            return this.numbers.filter((number) => number % 2 === 0);
-          },
-        },
+      Vue.component("font-color", {
+        template: '<p class ="colorful-font" :style="style"></p>',
       });
       new Vue({
         el: "#app",

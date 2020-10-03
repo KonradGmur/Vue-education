@@ -12,14 +12,11 @@
 
     <script src="http://unpkg.com/vue"></script>
     <script>
-      const myParagraph = {
-        template: "<p>Mój własny paragraf</p>",
-      };
+      Vue.component("my-paragraph", {
+        template: "<p>Mój własny paragraf 2</p>",
+      });
       new Vue({
         el: "#app",
-        components: {
-          myParagraph,
-        },
       });
     </script>
   </body>

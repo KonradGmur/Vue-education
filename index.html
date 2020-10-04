@@ -7,14 +7,23 @@
   </head>
   <body>
     <div id="app">
-      <font-color color="orange" font="25"></font-color>
+      <font-color color="orange"></font-color>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
       Vue.component("font-color", {
         template: '<p class ="colorful-font" :style="style">Our paragraph</p>',
-        props: ["color", "font"],
+        props: {
+          color: {
+            type: String,
+            required: true,
+          },
+          font: {
+            type: Number,
+            default: 26,
+          },
+        },
         computed: {
           style() {
             return { color: this.color, fontSize: this.font + "px" };

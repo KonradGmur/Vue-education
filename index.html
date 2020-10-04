@@ -7,29 +7,30 @@
   </head>
   <body>
     <div id="app">
-      <display-time :time="time"></display-time>
+      <display-time :time.sync="seconds" />
+      <!-- <display-time :time="seconds" @update:time="val => seconds=val" /> -->
     </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
       Vue.component("display-time", {
-        template: "<p>You are on the site from {{time}} seconds</p>",
+        template: "<p>Im on the site {{time}} seconds</p>",
         props: {
           time: {
             type: Number,
             required: true,
           },
         },
+        mounted() {
+          setInterval(() => {
+            this.$emit("update:time", this.time + 1);
+          }, 1000);
+        },
       });
       new Vue({
         el: "#app",
         data: {
-          time: 0,
-        },
-        created() {
-          setInterval(() => {
-            this.time++;
-          }, 1000);
+          seconds: 0,
         },
       });
     </script>

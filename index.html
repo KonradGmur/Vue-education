@@ -21,9 +21,19 @@
             required: true,
           },
         },
+        computed: {
+          temporary_time: {
+            get() {
+              return this.time;
+            },
+            set(value) {
+              this.$emit("update:time", value);
+            },
+          },
+        },
         mounted() {
           setInterval(() => {
-            this.$emit("update:time", this.time + 1);
+            this.temporary_time++;
           }, 1000);
         },
       });

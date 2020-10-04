@@ -7,31 +7,30 @@
   </head>
   <body>
     <div id="app">
-      <font-color font-color="orange"></font-color>
+      <display-time :time="time"></display-time>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
-      Vue.component("font-color", {
-        template: '<p class ="colorful-font" :style="style">Our paragraph</p>',
+      Vue.component("display-time", {
+        template: "<p>You are on the site from {{time}} seconds</p>",
         props: {
-          fontColor: {
-            type: String,
-            required: true,
-          },
-          font: {
+          time: {
             type: Number,
-            default: 26,
-          },
-        },
-        computed: {
-          style() {
-            return { color: this.fontColor, fontSize: this.font + "px" };
+            required: true,
           },
         },
       });
       new Vue({
         el: "#app",
+        data: {
+          time: 0,
+        },
+        created() {
+          setInterval(() => {
+            this.time++;
+          }, 1000);
+        },
       });
     </script>
   </body>

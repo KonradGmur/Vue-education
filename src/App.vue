@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Witaj w Vue.js</h1>
-    <hello></hello>
+    <hello class="color"></hello>
   </div>
 </template>
 

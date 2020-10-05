@@ -7,30 +7,13 @@
   </head>
   <body>
     <div id="app">
-      <p>{{name}}</p>
-      <pass-name v-model="name" />
+      <own-button></own-button>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
-      Vue.component("pass-name", {
-        template: '<input type="text" :value="value"  @input="handleField"/>',
-        props: {
-          value: {
-            type: String,
-            required: true,
-          },
-        },
-        methods: {
-          handleField(e) {
-            const value = e.target.value.toUpperCase();
-
-            if (value !== e.target.value) {
-              e.target.value === value;
-            }
-            this.$emit("input", value);
-          },
-        },
+      Vue.component("own-button", {
+        template: "<button><slot><span>Domyslny tekst</span></slot></button>",
       });
       new Vue({
         el: "#app",

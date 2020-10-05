@@ -7,20 +7,37 @@
   </head>
   <body>
     <div id="app">
-      <own-button></own-button>
+      <p>{{everything}}</p>
+      <button-add v-on:increase="increaseAll"></button-add>
+      <button-add v-on:increase="increaseAll"></button-add>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
-      Vue.component("own-button", {
-        template: "<button><slot><span>Domyslny tekst</span></slot></button>",
-      });
-      new Vue({
-        el: "#app",
-        data: {
-          name: "Konrad",
+      Vue.component("button-add", {
+        template: '<button v-on:click="increaseCounter">{{counter}}</button>',
+        data() {
+          return {
+            counter: 0,
+          };
         },
-      });
+        methods: {
+          increaseCounter() {
+            this.counter++, this.$emit("increase");
+          },
+        },
+      }),
+        new Vue({
+          el: "#app",
+          data: {
+            everything: 0,
+          },
+          methods: {
+            increaseAll() {
+              this.everything++;
+            },
+          },
+        });
     </script>
   </body>
 </html>

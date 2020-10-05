@@ -7,40 +7,35 @@
   </head>
   <body>
     <div id="app">
-      <display-time :time.sync="seconds" />
-      <!-- <display-time :time="seconds" @update:time="val => seconds=val" /> -->
+      <p>{{name}}</p>
+      <pass-name v-model="name" />
     </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
-      Vue.component("display-time", {
-        template: "<p>Im on the site {{time}} seconds</p>",
+      Vue.component("pass-name", {
+        template: '<input type="text" :value="value"  @input="handleField"/>',
         props: {
-          time: {
-            type: Number,
+          value: {
+            type: String,
             required: true,
           },
         },
-        computed: {
-          temporary_time: {
-            get() {
-              return this.time;
-            },
-            set(value) {
-              this.$emit("update:time", value);
-            },
+        methods: {
+          handleField(e) {
+            const value = e.target.value.toUpperCase();
+
+            if (value !== e.target.value) {
+              e.target.value === value;
+            }
+            this.$emit("input", value);
           },
-        },
-        mounted() {
-          setInterval(() => {
-            this.temporary_time++;
-          }, 1000);
         },
       });
       new Vue({
         el: "#app",
         data: {
-          seconds: 0,
+          name: "Konrad",
         },
       });
     </script>

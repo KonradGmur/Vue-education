@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-p {
-  color: blue;
+.color {
+  color: green;
 }
 </style>

@@ -19,8 +19,7 @@
   </head>
   <body>
     <div id="app">
-      <p class="font" v-bind:class="classObject"></p>
-      <!-- <p class="font" v-bind:class="[colorClass, backgroundClass]"> -->
+      <p class="font" v-bind:style="styleObject">
         Prosty tekst akapitowy
       </p>
     </div>
@@ -30,12 +29,11 @@
       new Vue({
         el: "#app",
         data: {
-          classObject: {
-            color: true,
-            background: true,
+          styleObject: {
+            color: "blue",
+            backgroundColor: "green",
+            fontSize: "25px",
           },
-        //   colorClass: 'color',
-        //   backgroundClass: 'background'
         },
       });
     </script>

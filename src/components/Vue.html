@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js</title>
+
+    <style>
+      .font {
+        font-size: 24px;
+      }
+      .color {
+        color: orange;
+      }
+      .background {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p class="font" v-bind:class="{color: orColor, background: orBackground}">
+        Prosty tekst akapitowy
+      </p>
+    </div>
+
+    <script src="http://unpkg.com/vue"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          orColor: true,
+          orBackground: false,
+        },
+      });
+    </script>
+  </body>
+</html>

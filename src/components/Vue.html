@@ -6,22 +6,32 @@
     <title>Vue.js</title>
 
     <style>
-      .font {
-        font-size: 24px;
+      .show-enter-active {
+        animation: showHide 0.5;
       }
-      .color {
-        color: orange;
+      .show-leave-active {
+        animation: showHide 0.5 reverse;
       }
-      .background {
-        background-color: red;
+
+      @keyframes showHide {
+        0% {
+          transform: scale(0);
+        }
+        50% {
+          transform: scale(1.5);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <p class="font" v-bind:style="styleObject">
-        Prosty tekst akapitowy
-      </p>
+      <button @click="show = !show">Show / Hide</button>
+      <transition name="showText">
+        <p v-if="show">Our paragraph text that comes and goes</p>
+      </transition>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
@@ -29,11 +39,7 @@
       new Vue({
         el: "#app",
         data: {
-          styleObject: {
-            color: "blue",
-            backgroundColor: "green",
-            fontSize: "25px",
-          },
+          show: true,
         },
       });
     </script>

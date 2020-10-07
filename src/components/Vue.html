@@ -15,20 +15,28 @@
       new Vue({
         el: "#app",
         render(createElement) {
-          return createElement("button", {
-            attrs: {
-              type: "submit",
+          return createElement(
+            "button",
+            {
+              attrs: {
+                type: "submit",
+              },
+              props: {
+                foo: "bar",
+              },
+              domProps: {
+                innerHTML: "Przykładowy tekst",
+              },
+              on: {
+                click: this.ourMethod,
+              },
+              slot: "przykladowySlot",
+              ref: "przykladowyRef",
+              class: ["jakasKlasa", { pogrubiony: true }],
+              style: { backgroundcolor: "blue" },
             },
-            props: {
-              foo: "bar",
-            },
-            domProps: {
-              innerHTML: "Przykładowy tekst",
-            },
-            on: {
-              click: this.ourMethod,
-            },
-          });
+            this.$slots.default
+          );
         },
         data: {
           tag: "p",

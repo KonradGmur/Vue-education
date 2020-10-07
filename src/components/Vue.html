@@ -14,7 +14,12 @@
     <script>
       new Vue({
         el: "#app",
-        render(createElement)
+        render(createElement) {
+          return createElement("h1", "Witaj Vue!");
+        },
+        data: {
+          tag: "p",
+        },
       });
     </script>
   </body>

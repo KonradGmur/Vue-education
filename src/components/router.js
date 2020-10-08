@@ -11,3 +11,5 @@ const router = new router({
     { path: "/kontakt", component: Contact },
   ],
 });
+
+export default router;

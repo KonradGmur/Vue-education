@@ -4,7 +4,8 @@ const Home = { template: "<div>Strona główna</div>" };
 const About = { template: "<div>O nas</div>" };
 const Contact = { template: "<div>Kontakt</div>" };
 const User = {
-  template: "<div>Id użytkownika: {{$route.params.userId}}</div>",
+  props: ["userId"],
+  template: "<div>Id użytkownika: {{userId}}</div>",
 };
 
 const router = new router({
@@ -13,7 +14,7 @@ const router = new router({
     { path: "/", component: Home },
     { path: "/onas", component: About },
     { path: "/kontakt", component: Contact },
-    { path: "/uzytkownik/:userId", component: User },
+    { path: "/uzytkownik/:userId", component: User, props: true },
   ],
 });
 

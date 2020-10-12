@@ -5,7 +5,7 @@
 export default {
   data() {
     return {
-      message: "Hello in component",
+      // message: "Hello in component",
     };
   },
 };

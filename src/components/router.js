@@ -16,7 +16,7 @@ const router = new router({
   routes: [
     { path: "/", component: Home },
     { path: "/onas", component: About },
-    { path: "/kontakt", component: Contact },
+    { path: "/kontakt", alias: "/constact", component: Contact },
     {
       path: "/uzytkownicy",
       component: UserGeneral,

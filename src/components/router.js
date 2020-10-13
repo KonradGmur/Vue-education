@@ -10,6 +10,9 @@ const User = {
   props: ["userId"],
   template: "<div>Id użytkownika: {{userId}}</div>",
 };
+const BrakStrony = {
+  template: "<div>Nie znaleziono strony!</div>",
+};
 
 const router = new router({
   mode: "history",
@@ -24,6 +27,7 @@ const router = new router({
     },
     {
       path: "/onas",
+      name: "o nas",
       component: About,
       meta: {
         title: "O nas",
@@ -47,6 +51,7 @@ const router = new router({
       ],
     },
     { path: "/uzytkownik/:userId", component: User, props: true },
+    { path: "*", component: BrakStrony },
   ],
 });
 

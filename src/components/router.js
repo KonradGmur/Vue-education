@@ -29,7 +29,12 @@ const router = new router({
         title: "O nas",
       },
     },
-    { path: "/kontakt", alias: "/constact", component: Contact },
+    {
+      path: "/kontakt",
+      alias: "/constact",
+      component: Contact,
+      // , beforeEnter(to, from, next)
+    },
     {
       path: "/uzytkownicy",
       component: UserGeneral,
@@ -54,8 +59,8 @@ const router = new router({
 // })
 // });
 
-router.afterEach((to) => {
-  document.title.to.meta.title;
-});
+// router.afterEach((to) => {
+//   document.title.to.meta.title;
+// });
 
 export default router;

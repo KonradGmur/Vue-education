@@ -37,36 +37,66 @@
       <div class="container">
         <div class="row">
           <div class="col wyswietlacz">
-            <span>0</span>
+            <span>{{wyswietlacz}}</span>
           </div>
         </div>
         <div class="row">
-          <button class="btn btn-primary col">C</button>
+          <button @click="zeruj" class="btn btn-primary col">C</button>
           <span class="col"></span>
-          <button class="btn btn-secondary col">.</button>
-          <button class="btn btn-secondary col">+</button>
+          <button @click="ustawLiczbe('.')" class="btn btn-secondary col">
+            .
+          </button>
+          <button @click="operator = '+'" class="btn btn-secondary col">
+            +
+          </button>
         </div>
         <div class="row">
-          <button class="btn btn-secondary col">7</button>
-          <button class="btn btn-secondary col">8</button>
-          <button class="btn btn-secondary col">9</button>
-          <button class="btn btn-secondary col">-</button>
+          <button @click="ustawLiczbe('7')" class="btn btn-secondary col">
+            7
+          </button>
+          <button @click="ustawLiczbe('8')" class="btn btn-secondary col">
+            8
+          </button>
+          <button @click="ustawLiczbe('9')" class="btn btn-secondary col">
+            9
+          </button>
+          <button @click="operator = '-'" class="btn btn-secondary col">
+            -
+          </button>
         </div>
         <div class="row">
-          <button class="btn btn-secondary col">4</button>
-          <button class="btn btn-secondary col">5</button>
-          <button class="btn btn-secondary col">6</button>
-          <button class="btn btn-secondary col">*</button>
+          <button @click="ustawLiczbe('4')" class="btn btn-secondary col">
+            4
+          </button>
+          <button @click="ustawLiczbe('5')" class="btn btn-secondary col">
+            5
+          </button>
+          <button @click="ustawLiczbe('6')" class="btn btn-secondary col">
+            6
+          </button>
+          <button @click="operator = '*'" class="btn btn-secondary col">
+            *
+          </button>
         </div>
         <div class="row">
-          <button class="btn btn-secondary col">1</button>
-          <button class="btn btn-secondary col">2</button>
-          <button class="btn btn-secondary col">3</button>
-          <button class="btn btn-secondary col">/</button>
+          <button @click="ustawLiczbe('1')" class="btn btn-secondary col">
+            1
+          </button>
+          <button @click="ustawLiczbe('2')" class="btn btn-secondary col">
+            2
+          </button>
+          <button @click="ustawLiczbe('3')" class="btn btn-secondary col">
+            3
+          </button>
+          <button @click="operator = '/'" class="btn btn-secondary col">
+            /
+          </button>
         </div>
         <div class="row">
-          <button class="btn secondary col-9">0</button>
-          <button class="btn secondary col">=</button>
+          <button @click="ustawLiczbe('0')" class="btn secondary col-9">
+            0
+          </button>
+          <button @click="oblicz" class="btn secondary col">=</button>
         </div>
       </div>
     </div>
@@ -107,6 +137,17 @@
                 this.suma = parseFloat(this.a) / parseFloat(this.b);
                 break;
             }
+            this.wyswietlacz = this.suma;
+            this.a = "" + this.suma + "";
+            this.b = "";
+            this.operator = null;
+          },
+          zeruj() {
+            this.a = "";
+            this.b = "";
+            this.suma = 0;
+            this.wyswietlacz = 0;
+            this.operator = null;
           },
         },
       });

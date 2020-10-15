@@ -75,6 +75,40 @@
     <script>
       new Vue({
         el: "#app",
+        data: {
+          a: "",
+          b: "",
+          suma: 0,
+          wyswietlacz: 0,
+          operator: null,
+        },
+        methods: {
+          ustawLiczbe(liczba) {
+            if (this.operator === null) {
+              this.a += liczba;
+              this.wyswietlacz = this.a;
+            } else {
+              this.b += liczba;
+              this.wyswietlacz = this.b;
+            }
+          },
+          oblicz() {
+            switch (this.operator) {
+              case "+":
+                this.suma = parseFloat(this.a) + parseFloat(this.b);
+                break;
+              case "-":
+                this.suma = parseFloat(this.a) - parseFloat(this.b);
+                break;
+              case "*":
+                this.suma = parseFloat(this.a) * parseFloat(this.b);
+                break;
+              case "/":
+                this.suma = parseFloat(this.a) / parseFloat(this.b);
+                break;
+            }
+          },
+        },
       });
     </script>
   </body>

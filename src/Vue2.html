@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt Vue</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.17.3/bootstrap-vue.min.js"
+      integrity="sha512-AktidHT1Q3QYOwbGQiURvDiOznelI/89m+qDG7OoV/pUQOZE83QlVacIALtZK7Gk0xQ5B9OLcrKDU+GsyWRpYg=="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="row">
+          <div class="col wyswietlacz">
+            <span>0</span>
+          </div>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary col">C</button>
+          <span class="col"></span>
+          <button class="btn btn-secondary col">.</button>
+          <button class="btn btn-secondary col">+</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-secondary col">7</button>
+          <button class="btn btn-secondary col">8</button>
+          <button class="btn btn-secondary col">9</button>
+          <button class="btn btn-secondary col">-</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-secondary col">4</button>
+          <button class="btn btn-secondary col">5</button>
+          <button class="btn btn-secondary col">6</button>
+          <button class="btn btn-secondary col">*</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-secondary col">1</button>
+          <button class="btn btn-secondary col">2</button>
+          <button class="btn btn-secondary col">3</button>
+          <button class="btn btn-secondary col">/</button>
+        </div>
+        <div class="row">
+          <button class="btn secondary col-9">0</button>
+          <button class="btn secondary col">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="http://unpkg.com/vue"></script>
+
+    <script>
+      new Vue({
+        el: "#app",
+      });
+    </script>
+  </body>
+</html>
